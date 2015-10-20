@@ -17,8 +17,8 @@ describe('Dependency', function() {
             $param = 'foo';
             $expected = $param . ' processed';
 
-            //$result = $this->object->process($param);
-        //    expect($result)->toBe($expected);
+            $result = $this->object->process($param);
+            expect($result)->toBe($expected);
         });
 
     });

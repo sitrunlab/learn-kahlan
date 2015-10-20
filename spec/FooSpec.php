@@ -13,11 +13,11 @@ describe('Foo', function() {
     before(function() {
         $this->dependency = Stub::create([
             'extends' => Dependency::class,
-            //'params' => [1]
+            'methods'  => ['__construct']
         ]);
         $this->object = new Foo($this->dependency);
     });
-
+ 
     describe('->process', function() {
 
         it('return "$param processed" string', function() {
