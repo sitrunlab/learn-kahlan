@@ -2,14 +2,13 @@
 
 namespace App;
 
-class Dependency implements DependencyInterface
+class Dependency implements
+    DependencyInterface,
+    AnotherInterface
 {
+    use ProcessTrait;
+
     public function __construct($a)
     {
-    }
-
-    public function process($param)
-    {
-        return $param.' processed';
     }
 }

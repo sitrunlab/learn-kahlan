@@ -2,9 +2,11 @@
 
 namespace App\Spec;
 
+use App\AnotherInterface;
 use App\DependencyInterface;
 use App\Dependency;
 use App\Foo;
+use App\ProcessTrait;
 use kahlan\QuitException;
 use kahlan\plugin\Stub;
 use kahlan\plugin\Quit;
@@ -17,7 +19,8 @@ describe('Foo', function () {
             'extends' => Dependency::class,
             'methods' => ['__construct'],
             // if we want to pass instance implements interface
-            // 'implements' => [DependencyInterface::class],
+             'implements' => [DependencyInterface::class, AnotherInterface::class],
+             'uses' => ProcessTrait::class,
         ]);
         $this->object = new Foo($this->dependency);
     });
