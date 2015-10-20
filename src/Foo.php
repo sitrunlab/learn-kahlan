@@ -4,7 +4,7 @@ namespace App;
 
 class Foo
 {
-    public function __construct(Dependency $d)
+    public function __construct(DependencyInterface $d)
     {
         $this->d = $d;
     }

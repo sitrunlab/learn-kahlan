@@ -3,19 +3,25 @@
 namespace App\Spec;
 
 use App\Dependency;
-use kahlan\plugin\Stub;
+use App\DependencyInterface;
 
-describe('Dependency', function() {
+describe('Dependency', function () {
 
-    describe('->process', function() {
+    before(function () {
+        $this->object = new Dependency(1);
+    });
 
-        before(function() {
-            $this->object =  new Dependency(1);
+    describe('DependencyInterface instance', function () {
+        it('instanceof DependencyInterface', function () {
+            expect($this->object)->toBeAnInstanceOf(DependencyInterface::class);
         });
+    });
 
-        it('return "$param processed" string', function() {
+    describe('->process', function () {
+
+        it('return "$param processed" string', function () {
             $param = 'foo';
-            $expected = $param . ' processed';
+            $expected = $param.' processed';
 
             $result = $this->object->process($param);
             expect($result)->toBe($expected);
