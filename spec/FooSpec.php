@@ -11,13 +11,22 @@ use kahlan\plugin\Quit;
 describe('Foo', function() {
 
     before(function() {
-        $this->dependency = Stub::create(['class' => Dependency::class]);
+        $this->dependency = Stub::create([
+            'extends' => Dependency::class,
+            'params' => [1]
+        ]);
         $this->object = new Foo($this->dependency);
+    });
+
+    describe('__construct', function() {
+        it('return "Foo" instance', function() {
+            $this->object = new Foo($this->dependency);
+        });
     });
 
     describe('->process', function() {
 
-        it('return "processed" string', function() {
+        it('return "$param processed" string', function() {
             $param = 'foo';
             $expected = $param . ' processed';
 
@@ -33,17 +42,17 @@ describe('Foo', function() {
 
     describe('->fooString', function() {
 
-        it('return "foo" string', function() use ($d) {
+        it('return "foo" string', function()  {
             $expected = 'foo';
             $result = $this->object->fooString();
 
             expect($result)->toBe($expected);
         });
 
-        it('Quit from the execution', function() use ($d) {
+        it('Quit from the execution', function() {
             Quit::disable();
 
-            $closure = function() use ($d) {
+            $closure = function() {
                 $this->object->fooString(false);
             };
 
