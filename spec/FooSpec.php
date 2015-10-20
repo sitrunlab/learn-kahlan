@@ -13,15 +13,9 @@ describe('Foo', function() {
     before(function() {
         $this->dependency = Stub::create([
             'extends' => Dependency::class,
-            'params' => [1]
+            //'params' => [1]
         ]);
         $this->object = new Foo($this->dependency);
-    });
-
-    describe('__construct', function() {
-        it('return "Foo" instance', function() {
-            $this->object = new Foo($this->dependency);
-        });
     });
 
     describe('->process', function() {
