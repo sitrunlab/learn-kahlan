@@ -4,7 +4,8 @@ namespace App;
 
 class Foo
 {
-    private $d = null;
+    /** @var DependencyInterface */
+    private $d;
 
     public function __construct(DependencyInterface $d)
     {
