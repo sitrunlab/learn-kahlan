@@ -4,6 +4,8 @@ namespace App;
 
 class Foo
 {
+    private $d = null;
+
     public function __construct(DependencyInterface $d)
     {
         $this->d = $d;
