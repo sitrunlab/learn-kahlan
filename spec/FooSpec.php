@@ -8,9 +8,9 @@ use App\Dependency;
 use App\Foo;
 use App\ProcessTrait;
 use App\UnusedTrait;
-use kahlan\QuitException;
-use kahlan\plugin\Stub;
-use kahlan\plugin\Quit;
+use Kahlan\QuitException;
+use Kahlan\Plugin\Stub;
+use Kahlan\Plugin\Quit;
 
 describe('Foo', function () {
 
