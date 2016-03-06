@@ -4,6 +4,9 @@ namespace App;
 
 class Foo
 {
+    /** @var DependencyInterface */
+    private $d;
+
     public function __construct(DependencyInterface $d)
     {
         $this->d = $d;
