@@ -3,3 +3,4 @@ vendor/
 bin/
 coverage
 lcov
+coverage.json
