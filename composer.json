@@ -1,6 +1,6 @@
 {
     "require": {
-        "crysalead/kahlan": "~2.3.2"
+        "crysalead/kahlan": "^2.5.2"
     },
     "autoload": {
         "psr-4": {
