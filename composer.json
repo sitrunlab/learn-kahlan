@@ -2,10 +2,6 @@
     "require": {
         "crysalead/kahlan": "dev-dev"
     },
-    "repositories" : [ {
-        "type" : "vcs",
-        "url" : "https://github.com/jails/kahlan.git"
-    }],
     "autoload": {
         "psr-4": {
             "App\\": "src/"
