@@ -9,7 +9,7 @@ use App\Foo;
 use App\ProcessTrait;
 use App\UnusedTrait;
 use Kahlan\QuitException;
-use Kahlan\Plugin\Stub;
+use Kahlan\Plugin\Double;
 use Kahlan\Plugin\Quit;
 
 describe('Foo', function () {
