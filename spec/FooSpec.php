@@ -39,9 +39,9 @@ describe('Foo', function () {
             $param = 'foo';
             $expected = $param.' processed';
 
-            Stub::on($this->dependency)->method('process')
-                                       ->with($param)
-                                       ->andReturn($expected);
+            allow($this->dependency)->method('process')
+                                    ->with($param)
+                                    ->andReturn($expected);
 
             $result = $this->object->process($param);
             expect($result)->toBe($expected);
