@@ -39,7 +39,7 @@ describe('Foo', function () {
             $param = 'foo';
             $expected = $param.' processed';
 
-            expect($this->dependency)->toReceive('process')
+            allow($this->dependency)->toReceive('process')
                                     ->with($param)
                                     ->andReturn($expected);
 
