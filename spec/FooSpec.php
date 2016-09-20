@@ -15,7 +15,7 @@ use Kahlan\Plugin\Quit;
 describe('Foo', function () {
 
     beforeAll(function () {
-        $this->dependency = Stub::create([
+        $this->dependency = Stub::args([
             // if we want to use exact class, we can use
             'extends' => Dependency::class,
             'methods' => ['__construct'],
