@@ -14,7 +14,7 @@ use Kahlan\Plugin\Quit;
 
 describe('Foo', function () {
 
-    before(function () {
+    beforeAll(function () {
         $this->dependency = Stub::create([
             // if we want to use exact class, we can use
             'extends' => Dependency::class,

@@ -1,7 +1,11 @@
 {
     "require": {
-        "crysalead/kahlan": "^2.5.6"
+        "crysalead/kahlan": "dev-dev"
     },
+    "repositories" : [ {
+        "type" : "vcs",
+        "url" : "https://github.com/crysalead/kahlan.git"
+    }],
     "autoload": {
         "psr-4": {
             "App\\": "src/"
