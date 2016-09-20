@@ -15,7 +15,7 @@ use Kahlan\Plugin\Quit;
 describe('Foo', function () {
 
     beforeAll(function () {
-        $this->dependency = args([
+        $this->dependency = Double::instance([
             // if we want to use exact class, we can use
             'extends' => Dependency::class,
             'methods' => ['__construct'],
