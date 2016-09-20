@@ -4,7 +4,7 @@
     },
     "repositories" : [ {
         "type" : "vcs",
-        "url" : "https://github.com/crysalead/kahlan.git"
+        "url" : "https://github.com/jails/kahlan.git"
     }],
     "autoload": {
         "psr-4": {
