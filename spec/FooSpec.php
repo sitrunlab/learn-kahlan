@@ -7,7 +7,6 @@ use App\DependencyInterface;
 use App\Dependency;
 use App\Foo;
 use App\ProcessTrait;
-use App\UnusedTrait;
 use Kahlan\QuitException;
 use Kahlan\Plugin\Double;
 use Kahlan\Plugin\Quit;
