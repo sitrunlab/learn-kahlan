@@ -7,15 +7,14 @@ use App\DependencyInterface;
 use App\Dependency;
 use App\Foo;
 use App\ProcessTrait;
-use App\UnusedTrait;
 use Kahlan\QuitException;
-use Kahlan\Plugin\Stub;
+use Kahlan\Plugin\Double;
 use Kahlan\Plugin\Quit;
 
 describe('Foo', function () {
 
-    before(function () {
-        $this->dependency = Stub::create([
+    beforeAll(function () {
+        $this->dependency = Double::instance([
             // if we want to use exact class, we can use
             'extends' => Dependency::class,
             'methods' => ['__construct'],
@@ -39,9 +38,9 @@ describe('Foo', function () {
             $param = 'foo';
             $expected = $param.' processed';
 
-            Stub::on($this->dependency)->method('process')
-                                       ->with($param)
-                                       ->andReturn($expected);
+            allow($this->dependency)->toReceive('process')
+                                    ->with($param)
+                                    ->andReturn($expected);
 
             $result = $this->object->process($param);
             expect($result)->toBe($expected);

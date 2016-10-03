@@ -7,7 +7,7 @@ use App\DependencyInterface;
 
 describe('Dependency', function () {
 
-    before(function () {
+    beforeAll(function () {
         $this->object = new Dependency(1);
     });
 
