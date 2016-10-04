@@ -6,12 +6,11 @@ use App\Dependency;
 use App\Bar;
 
 describe('Bar', function () {
-    
     given('bar', function() {
         return new Bar();
     });
 
-    describe('__construct', function () {
+    describe('instance', function () {
         it('return "Bar" instance', function () {
             expect($this->bar)->toBeAnInstanceOf(Bar::class);
         });

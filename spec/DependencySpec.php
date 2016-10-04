@@ -17,7 +17,7 @@ describe('Dependency', function () {
             expect($r->getValue($this->dependency))->toBe(1);
         });
     });
-
+    
     describe('DependencyInterface instance', function () {
         it('instanceof DependencyInterface', function () {
             expect($this->dependency)->toBeAnInstanceOf(DependencyInterface::class);

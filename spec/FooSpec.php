@@ -7,7 +7,6 @@ use App\DependencyInterface;
 use App\Dependency;
 use App\Foo;
 use App\ProcessTrait;
-use App\UnusedTrait;
 use Kahlan\QuitException;
 use Kahlan\Plugin\Double;
 use Kahlan\Plugin\Quit;
@@ -29,7 +28,7 @@ describe('Foo', function () {
         return new Foo($this->dependency);
     });
 
-    describe('__construct', function () {
+    describe('instance of check', function () {
         it('return "Foo" instance', function () {
             expect($this->foo)->toBeAnInstanceOf(Foo::class);
         });
@@ -42,8 +41,8 @@ describe('Foo', function () {
             $expected = $param.' processed';
 
             allow($this->dependency)->toReceive('process')
-                                       ->with($param)
-                                       ->andReturn($expected);
+                                    ->with($param)
+                                    ->andReturn($expected);
 
             $result = $this->foo->process($param);
             expect($result)->toBe($expected);
