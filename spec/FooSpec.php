@@ -9,13 +9,12 @@ use App\Foo;
 use App\ProcessTrait;
 use App\UnusedTrait;
 use Kahlan\QuitException;
-use Kahlan\Plugin\Stub;
+use Kahlan\Plugin\Double;
 use Kahlan\Plugin\Quit;
 
-describe('Foo', function () {
-
-    before(function () {
-        $this->dependency = Stub::create([
+describe('Foo', function () {    
+    given('dependency', function() {
+        return Double::instance([
             // if we want to use exact class, we can use
             'extends' => Dependency::class,
             'methods' => ['__construct'],
@@ -24,12 +23,15 @@ describe('Foo', function () {
             // if we want to use Trait
             'uses' => [ProcessTrait::class],
         ]);
-        $this->object = new Foo($this->dependency);
+    });
+
+    given('foo', function() {
+        return new Foo($this->dependency);
     });
 
     describe('__construct', function () {
         it('return "Foo" instance', function () {
-            expect(new Foo($this->dependency))->toBeAnInstanceOf(Foo::class);
+            expect($this->foo)->toBeAnInstanceOf(Foo::class);
         });
     });
 
@@ -39,11 +41,11 @@ describe('Foo', function () {
             $param = 'foo';
             $expected = $param.' processed';
 
-            Stub::on($this->dependency)->method('process')
+            allow($this->dependency)->toReceive('process')
                                        ->with($param)
                                        ->andReturn($expected);
 
-            $result = $this->object->process($param);
+            $result = $this->foo->process($param);
             expect($result)->toBe($expected);
         });
 
@@ -53,7 +55,7 @@ describe('Foo', function () {
 
         it('return "foo" string', function () {
             $expected = 'foo';
-            $result = $this->object->fooString();
+            $result = $this->foo->fooString();
 
             expect($result)->toBe($expected);
         });
@@ -62,7 +64,7 @@ describe('Foo', function () {
             Quit::disable();
 
             $closure = function () {
-                $this->object->fooString(false);
+                $this->foo->fooString(false);
             };
 
             expect($closure)->toThrow(new QuitException());

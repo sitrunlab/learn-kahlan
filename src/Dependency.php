@@ -7,8 +7,10 @@ class Dependency implements
     AnotherInterface
 {
     use ProcessTrait;
+    private $a;
 
     public function __construct($a)
     {
+        $this->a = $a;
     }
 }
