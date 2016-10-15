@@ -8,4 +8,9 @@ class Baz
     {
         return mt_rand($start, $end);
     }
+    
+    public function getStringOfInteger($int)
+    {
+        return "$int";
+    }
 }
