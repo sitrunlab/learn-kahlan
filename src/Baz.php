@@ -4,8 +4,8 @@ namespace App;
 
 class Baz
 {
-    public function listValues($values)
+    public function listValuesCheck($value, $values)
     {
-        return $values;
+        return in_array($value, $values);
     }
 }

@@ -13,20 +13,22 @@ describe('Baz', function () {
 
         it('passed if value is part of array', function () {
             $value = 1;
-            $array = [1, 2, 3];
+            $values = [1, 2, 3];
 
-            $result = $this->baz->listValues($array);
+            $result = $this->baz->listValuesCheck($value, $values);
             
-            expect($value)->toBeOneOf($result);
+            expect($value)->toBeOneOf($values);
+            expect($result)->toBe(true);
         });
         
         it('fails if value is not part of array', function () {
             $value = 0;
-            $array = [1, 2, 3];
+            $values = [1, 2, 3];
 
-            $result = $this->baz->listValues($value, $array);
+            $result = $this->baz->listValuesCheck($value, $values);
             
-            expect($value)->not->toBeOneOf($result);
+            expect($value)->not->toBeOneOf($values);
+            expect($result)->toBe(false);
         });
 
     });
