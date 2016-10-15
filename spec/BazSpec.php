@@ -9,7 +9,7 @@ describe('Baz', function () {
         return new Baz();
     });
     
-    describe('->partOf', function () {
+    describe('->listValuesCheck', function () {
 
         it('passed if value is part of array', function () {
             $value = 1;
