@@ -9,26 +9,21 @@ describe('Baz', function () {
         return new Baz();
     });
     
-    describe('->listValuesCheck', function () {
+    describe('->getRandomFromRange', function () {
 
         it('passed if value is part of array', function () {
-            $value = 1;
-            $values = [1, 2, 3];
+            $expected = [1, 2, 3];
 
-            $result = $this->baz->listValuesCheck($value, $values);
-            
-            expect($value)->toBeOneOf($values);
-            expect($result)->toBe(true);
+            $actual = $this->baz->getRandomFromRange(1, 3);
+            expect($actual)->toBeOneOf($expected);
         });
         
         it('fails if value is not part of array', function () {
             $value = 0;
-            $values = [1, 2, 3];
-
-            $result = $this->baz->listValuesCheck($value, $values);
+            $expected = [10, 11, 12];
             
-            expect($value)->not->toBeOneOf($values);
-            expect($result)->toBe(false);
+            $actual = $this->baz->getRandomFromRange(1, 3);
+            expect($actual)->not->toBeOneOf($expected);
         });
 
     });

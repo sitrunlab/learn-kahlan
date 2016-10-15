@@ -4,8 +4,8 @@ namespace App;
 
 class Baz
 {
-    public function listValuesCheck($value, $values)
+    public function getRandomFromRange($start, $end)
     {
-        return in_array($value, $values);
+        return mt_rand($start, $end);
     }
 }
