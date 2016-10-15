@@ -1,4 +1,3 @@
 <?php
-use Kahlan\Matcher;
 
-Matcher::register('toBeOneOf', 'Kahlan\Extra\Matcher\ToBeOneOf');
+require_once 'vendor/kahlan/extra-matcher/kahlan-config.php';
