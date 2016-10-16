@@ -15,6 +15,7 @@
     "minimum-stability": "dev",
     "require-dev": {
         "kahlan/kahlan": "^3.0",
-        "kahlan/extra-matcher": "dev-master"
+        "kahlan/extra-matcher": "dev-master",
+        "satooshi/php-coveralls": "^1.0"
     }
 }
