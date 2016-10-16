@@ -1,6 +1,7 @@
 # learn-kahlan
 
 [![Build Status](https://travis-ci.org/sitrunlab/learn-kahlan.svg)](https://travis-ci.org/sitrunlab/learn-kahlan)
+[![Coverage Status](https://coveralls.io/repos/github/sitrunlab/learn-kahlan/badge.svg?branch=master)](https://coveralls.io/github/sitrunlab/learn-kahlan?branch=master)
 
 Consume
 -------
