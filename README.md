@@ -10,8 +10,12 @@ Consume
 $ git clone https://github.com/sitrunlab/learn-kahlan.git
 $ cd learn-kahlan
 $ composer install
-$ bin/kahlan --coverage=4 --reporter=verbose
+$ bin/kahlan --coverage=4
 ```
+
+You will get the following output:
+
+![run kahlan](asset/run-kahlan-command.png)
 
 Get Html Report
 ---------------
