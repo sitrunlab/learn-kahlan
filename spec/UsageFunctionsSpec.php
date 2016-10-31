@@ -2,7 +2,7 @@
 
 namespace App\Spec;
 
-use function App\getCurrentTime;
+use App\UsageFunctions;
 
 describe('UsageFunctions', function () {
     
@@ -13,7 +13,7 @@ describe('UsageFunctions', function () {
             $expected = 1477897159;
             allow('time')->toBeCalled()->andReturn($expected);
             
-            $actual = getCurrentTime();
+            $actual = (new UsageFunctions())->getCurrentTime();
             expect($actual)->toBe($expected);
             
         });

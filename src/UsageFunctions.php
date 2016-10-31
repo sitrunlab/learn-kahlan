@@ -1,7 +1,9 @@
 <?php
 
-namespace App {
+namespace App;
 
+class UsageFunctions
+{
     function getCurrentTime()
     {
         return time();
