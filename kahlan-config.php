@@ -1,3 +1,5 @@
 <?php
 
-require_once 'vendor/kahlan/extra-matcher/kahlan-config.php';
+use Kahlan\Extra\Matcher\ExtraMatchers;
+
+ExtraMatchers::register();
