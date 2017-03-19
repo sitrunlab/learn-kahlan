@@ -25,4 +25,9 @@ class Foo
 
         exit(0);
     }
+
+    public function callDie()
+    {
+        die;
+    }
 }

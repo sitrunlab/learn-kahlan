@@ -11,7 +11,7 @@ use Kahlan\QuitException;
 use Kahlan\Plugin\Double;
 use Kahlan\Plugin\Quit;
 
-describe('Foo', function () {    
+describe('Foo', function () {
     given('dependency', function() {
         return Double::instance([
             // if we want to use exact class, we can use
@@ -64,6 +64,20 @@ describe('Foo', function () {
 
             $closure = function () {
                 $this->foo->fooString(false);
+            };
+
+            expect($closure)->toThrow(new QuitException());
+        });
+
+    });
+
+    describe('->callDie()', function () {
+
+        it('Quit from the execution', function () {
+            Quit::disable();
+
+            $closure = function () {
+                $this->foo->callDie();
             };
 
             expect($closure)->toThrow(new QuitException());
