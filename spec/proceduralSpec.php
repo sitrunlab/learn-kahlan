@@ -1,5 +1,5 @@
 <?php
-namespace procedural\spec;
+namespace App\Spec;
 
 use function prodecural\echoScript;
 

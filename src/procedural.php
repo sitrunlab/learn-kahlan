@@ -1,5 +1,5 @@
 <?php
-namespace procedural;
+namespace App;
 
 /**
  * Echos string inside a `script` element
