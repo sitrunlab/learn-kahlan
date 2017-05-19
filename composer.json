@@ -18,5 +18,9 @@
         "kahlan/kahlan": "dev-dev",
         "kahlan/extra-matcher": "^1.0",
         "satooshi/php-coveralls": "^1.0"
+    },
+    "suggest": {
+        "ext-xdebug": "Xdebug extension to allow to get coverage report",
+        "ext-phpdbg": "PHPDBG extension to allow to get coverage report"
     }
 }
