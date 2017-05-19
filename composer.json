@@ -9,7 +9,7 @@
             "App\\Spec\\": "spec/"
         },
         "files": [
-          "src/prodecural.php"
+          "src/procedural.php"
         ]
     },
     "config": {
