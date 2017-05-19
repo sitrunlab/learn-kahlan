@@ -1,0 +1,18 @@
+preset: recommended
+
+linting: true
+
+enabled:
+  - strict
+  - unalign_double_arrow
+
+disabled:
+  - align_double_arrow
+
+finder:
+  exclude:
+    - "src"
+  name:
+    - "*.php"
+  path:
+    - "src"
