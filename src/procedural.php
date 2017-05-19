@@ -15,10 +15,9 @@ function echoScript( $string ) {
 /**
  * Echos a string as a side-effect/mutation
  *
- * @link https://wiki.php.net/rfc/void_return_type
+ * @todo https://wiki.php.net/rfc/void_return_type
  * @param string $string The string to echo
- * @return void
  */
-function echoString( $string ): void {
+function echoString( $string ) {
     echo $string;
 };
