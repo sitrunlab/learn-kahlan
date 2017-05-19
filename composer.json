@@ -7,13 +7,19 @@
     "autoload-dev": {
         "psr-4": {
             "App\\Spec\\": "spec/"
-        }
+        },
+        "files": [
+          "src/procedural.php"
+        ]
     },
     "config": {
         "bin-dir": "bin"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "require": {
+        "php": "^5.5|^5.6"
+    },
     "require-dev": {
         "kahlan/kahlan": "dev-dev",
         "kahlan/extra-matcher": "^1.0",
