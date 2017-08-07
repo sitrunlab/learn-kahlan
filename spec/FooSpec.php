@@ -13,7 +13,7 @@ use Kahlan\Plugin\Quit;
 
 describe('Foo', function () {
     given('dependency', function() {
-        return Double::instance([
+        $dependency =  Double::instance([
             // if we want to use exact class, we can use
             'extends' => Dependency::class,
             'methods' => ['__construct'],
@@ -22,6 +22,10 @@ describe('Foo', function () {
             // if we want to use Trait
             'uses' => [ProcessTrait::class],
         ]);
+
+		allow($dependency)->toReceive('isExplicitVoidMethod');
+
+        return $dependency;
     });
 
     given('foo', function() {
@@ -84,4 +88,34 @@ describe('Foo', function () {
         });
 
     });
+
+    describe('->callImplicitVoidMethod()', function () {
+
+        it ('does like implicit void methods', function () {
+
+            allow($this->dependency)->toReceive('isImplicitVoidMethod');
+            expect($this->dependency)
+                ->toReceive('isImplicitVoidMethod')
+                ->once();
+
+            $this->foo->callImplicitVoidMethod();
+
+        });
+
+    });
+
+    describe('->callExplicitVoidMethod()', function () {
+
+        it ('does like type-checked void methods', function () {
+
+            allow($this->dependency)->toReceive('isExplicitVoidMethod');
+            expect($this->dependency)
+                ->toReceive('isExplicitVoidMethod')
+                ->once();
+
+            $this->foo->callExplicitVoidMethod();
+
+        });
+    });
+
 });

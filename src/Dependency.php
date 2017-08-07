@@ -13,4 +13,14 @@ class Dependency implements
     {
         $this->a = $a;
     }
+
+    public function isImplicitVoidMethod()
+	{
+		throw new \Exception("isImplicitVoidMethod");
+	}
+
+	public function isExplicitVoidMethod() : void
+	{
+		throw new \Exception("isExplicitVoidMethod");
+	}
 }

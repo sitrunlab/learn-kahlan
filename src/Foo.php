@@ -30,4 +30,13 @@ class Foo
     {
         die;
     }
+
+    public function callImplicitVoidMethod()
+    {
+        $this->d->isImplicitVoidMethod();
+    }
+    public function callExplicitVoidMethod()
+    {
+        $this->d->isExplicitVoidMethod();
+    }
 }
