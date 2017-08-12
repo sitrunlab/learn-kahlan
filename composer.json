@@ -14,9 +14,12 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "require": {
+        "php": "^7.1"
+    },
     "require-dev": {
-        "kahlan/kahlan": "^3.1.17",
-        "kahlan/extra-matcher": "^1.0",
+        "kahlan/kahlan": "4.0.x-dev",
+        "kahlan/extra-matcher": "dev-master",
         "satooshi/php-coveralls": "^1.0"
     },
     "suggest": {
