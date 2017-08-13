@@ -54,6 +54,8 @@ describe('Dependency', function () {
 
         it('throw Exception', function () {
 
+            skipIf(PHP_MAJOR_VERSION < 7);
+
             $closure = function () {
                 $this->dependency->isExplicitVoidMethod();
             };
