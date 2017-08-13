@@ -108,6 +108,8 @@ describe('Foo', function () {
 
         it ('does like type-checked void methods', function () {
 
+            skipIf(PHP_MAJOR_VERSION < 7);
+
             allow($this->dependency)->toReceive('isExplicitVoidMethod');
             expect($this->dependency)
                 ->toReceive('isExplicitVoidMethod')

@@ -5,6 +5,8 @@ namespace App\Spec;
 use App\Dependency;
 use App\DependencyInterface;
 
+skipIf(PHP_MAJOR_VERSION < 7);
+
 describe('Dependency', function () {
     given('dependency', function() {
         return new Dependency(1);
@@ -53,8 +55,6 @@ describe('Dependency', function () {
     describe('->isExplicitVoidMethod', function () {
 
         it('throw Exception', function () {
-
-            skipIf(PHP_MAJOR_VERSION < 7);
 
             $closure = function () {
                 $this->dependency->isExplicitVoidMethod();
