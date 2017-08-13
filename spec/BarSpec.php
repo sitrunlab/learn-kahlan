@@ -5,7 +5,11 @@ namespace App\Spec;
 use App\Dependency;
 use App\Bar;
 
+
 describe('Bar', function () {
+
+    skipIf(PHP_MAJOR_VERSION < 7);
+
     given('bar', function() {
         return new Bar();
     });
@@ -25,7 +29,7 @@ describe('Bar', function () {
             allow(Dependency::class)->toReceive('process')
                                     ->with($param)
                                     ->andReturn($expected);
-            
+
             $result = $this->bar->process($param);
             expect($result)->toBe($expected);
         });

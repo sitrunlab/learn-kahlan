@@ -6,6 +6,9 @@ use App\Dependency;
 use App\DependencyInterface;
 
 describe('Dependency', function () {
+
+    skipIf(PHP_MAJOR_VERSION < 7);
+
     given('dependency', function() {
         return new Dependency(1);
     });

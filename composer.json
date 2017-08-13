@@ -15,11 +15,11 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.1"
+        "php": "^5.4|^7.0"
     },
     "require-dev": {
-        "kahlan/kahlan": "4.0.x-dev",
-        "kahlan/extra-matcher": "dev-master",
+        "kahlan/kahlan": "^3.1.18|4.0.x-dev",
+        "kahlan/extra-matcher": "^1.0|dev-master",
         "satooshi/php-coveralls": "^1.0"
     },
     "suggest": {
