@@ -5,9 +5,11 @@ namespace App\Spec;
 use App\Dependency;
 use App\Bar;
 
-skipIf(PHP_MAJOR_VERSION < 7);
 
 describe('Bar', function () {
+
+    skipIf(PHP_MAJOR_VERSION < 7);
+
     given('bar', function() {
         return new Bar();
     });
