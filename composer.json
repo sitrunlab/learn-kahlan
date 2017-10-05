@@ -18,7 +18,7 @@
         "php": "^7.1"
     },
     "require-dev": {
-        "kahlan/kahlan": "4.0.x-dev",
+        "kahlan/kahlan": "^4.0",
         "kahlan/extra-matcher": "dev-master",
         "satooshi/php-coveralls": "^1.0"
     },
