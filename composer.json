@@ -20,9 +20,9 @@
         "php": "^7.1"
     },
     "require-dev": {
-        "kahlan/kahlan": "^4.0.6",
+        "kahlan/kahlan": "^4.1.1",
         "kahlan/extra-matcher": "dev-master",
-        "satooshi/php-coveralls": "^1.0"
+        "php-coveralls/php-coveralls": "^2.0"
     },
     "suggest": {
         "ext-xdebug": "Xdebug extension to allow to get coverage report",
