@@ -20,7 +20,7 @@
         "php": "^7.1"
     },
     "require-dev": {
-        "kahlan/kahlan": "^4.1.1",
+        "kahlan/kahlan": "^4.1.3",
         "kahlan/extra-matcher": "dev-master",
         "php-coveralls/php-coveralls": "^2.0"
     },
