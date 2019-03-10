@@ -19,6 +19,10 @@ Filters::apply($this, 'coverage', function($next) {
         'path'      => $this->commandLine()->get('src'),
         'exclude'   => [
             'src/ExcludedFromCoverage.php',
+            /*
+            for exclude all files inside specific directory, you can use *, eg:
+                'src/Foo/Bar/*',
+            */
         ],
         'colors'    => ! $this->commandLine()->get('no-colors')
     ]);
