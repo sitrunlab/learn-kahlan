@@ -16,8 +16,9 @@ describe('Api', function () {
             }
 
             $api = new Api();
-            $api->get('a');
-            $api->get('b');
+            foreach ($gets as $get) {
+                $api->get($get);
+            }
 
             expect(Api::class)->toReceive('get')->times(\count($gets));
 
