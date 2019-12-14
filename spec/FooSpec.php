@@ -50,6 +50,8 @@ describe('Foo', function () {
 
             $result = $this->foo->process($param);
             expect($result)->toBe($expected);
+
+            expect($this->dependency)->toReceive('process')->with($param)->once();
         });
 
     });
@@ -92,14 +94,15 @@ describe('Foo', function () {
     describe('->callImplicitVoidMethod()', function () {
 
         it ('does like implicit void methods', function () {
-
+            // stub
             allow($this->dependency)->toReceive('isImplicitVoidMethod');
-            expect($this->dependency)
-                ->toReceive('isImplicitVoidMethod')
-                ->once();
 
             $this->foo->callImplicitVoidMethod();
 
+            // spy
+            expect($this->dependency)
+                ->toReceive('isImplicitVoidMethod')
+                ->once();
         });
 
     });
@@ -107,14 +110,15 @@ describe('Foo', function () {
     describe('->callExplicitVoidMethod()', function () {
 
         it ('does like type-checked void methods', function () {
-
+            // stub
             allow($this->dependency)->toReceive('isExplicitVoidMethod');
-            expect($this->dependency)
-                ->toReceive('isExplicitVoidMethod')
-                ->once();
 
             $this->foo->callExplicitVoidMethod();
 
+            // spy
+            expect($this->dependency)
+                ->toReceive('isExplicitVoidMethod')
+                ->once();
         });
     });
 
