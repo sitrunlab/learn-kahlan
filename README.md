@@ -20,9 +20,11 @@ You will get the following output:
 Get Html Report
 ---------------
 ```
-$ npm install -g istanbul
-$ ./bin/kahlan --istanbul="coverage.json"
-$ istanbul report
+$ npm install -g nyc
+$ mkdir .nyc_output
+$ ./bin/kahlan --istanbul=.nyc_output/coverage.json
+$ nyc report --reporter=html --extension=".php"
+$ open coverage/index.html
 ```
 
 or
@@ -33,4 +35,5 @@ $ mkdir lcov
 $ ./bin/kahlan --lcov="lcov/coverage.info"
 $ cd lcov
 $ genhtml coverage.info
+$ open index.html
 ```
