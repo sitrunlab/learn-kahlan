@@ -4,7 +4,7 @@ namespace App;
 
 final class FinalClass
 {
-    public function do() : int
+    public final function do() : int
     {
         return 1;
     }
